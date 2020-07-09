@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import TCContext from '../Context/TCContext'
 import MainPage from '../MainPage/MainPage';
 import Read from '../Read/Read';
+import LandingPage from '../LandingPage/LandingPage.js';
 import DailyReadingPlan from '../DailyReadingPlan/DailyReadingPlan';
 import DRPages from '../DRPages/DRPages';
 import config from '../config';
@@ -14,6 +15,8 @@ export default class App extends Component {
     books: [],
     chapters: [],
     verses: [],
+    plantitles: [],
+    plans: []
     }
 
   componentDidMount() {
@@ -22,16 +25,21 @@ export default class App extends Component {
       fetch(`${config.API_ENDPOINT}/api/books`),
       fetch(`${config.API_ENDPOINT}/api/chapters`),
       fetch(`${config.API_ENDPOINT}/api/verses`),
+      fetch(`${config.API_ENDPOINT}/api/plantitles`),
+      fetch(`${config.API_ENDPOINT}/api/plans`),
+
     ])
-      .then(([ booksRes, chaptersRes, versesRes ]) => {
+      .then(([ booksRes, chaptersRes, versesRes, plantitlesRes, plansRes ]) => {
         if (!booksRes.ok) return booksRes.json().then(e => Promise.reject(e))
         if (!chaptersRes.ok) return chaptersRes.json().then(e => Promise.reject(e))
         if (!versesRes.ok) return versesRes.json().then(e => Promise.reject(e))
-        return Promise.all([booksRes.json(), chaptersRes.json(), versesRes.json()])
+        if (!plantitlesRes.ok) return plantitlesRes.json().then(e => Promise.reject(e))
+        if (!plansRes.ok) return plansRes.json().then(e => Promise.reject(e))
+        return Promise.all([booksRes.json(), chaptersRes.json(), versesRes.json(), plantitlesRes.json(), plansRes.json()])
       })
-      .then(([books, chapters, verses]) => {
-        this.setState({ loading: false, books, chapters, verses })
-        console.log('fetch call', books, chapters, verses )
+      .then(([books, chapters, verses, plantitles, plans]) => {
+        this.setState({ loading: false, books, chapters, verses, plantitles, plans })
+        console.log('fetch call', books, chapters, verses, plantitles, plans)
       })
       .catch(error => {
         console.error({ error })
@@ -39,33 +47,32 @@ export default class App extends Component {
     })
   }
       
-  
-
-
   renderMainRoutes() {
     return (
       <>
-        <Route exact path= "/" component={MainPage}/>
-        <Route exact path= "/:bookId" component={Read}/>
-        <Route exact path= "/dailyreader" component={DailyReadingPlan}/>
-        <Route exact path= "/dailyreader/:dailyreaderId" component={DRPages}/>
+        <Route exact path= "/" component={LandingPage}/>       
+        <Route exact path= "/main" component={MainPage}/>
+        <Route exact path= "/main/:bookId" component={Read}/>
+        <Route exact path= "/dailyreader/:planTitleId" component={DailyReadingPlan}/>
+        <Route exact path= "/readingplan/:planId" component={DRPages}/>
       </>
     )
   }
-
 
   render() {
     const contextValue = {
       books: this.state.books,
       chapters: this.state.chapters,
       verses: this.state.verses,
+      plantitles: this.state.plantitles,
+      plans: this.state.plans 
       }
     const {loading}=this.state;
     console.log('dont now', this.state.chapters, this.state.books)
     return (
       <div className="App">
         <nav className="App__nav" >
-          <Link to={"/"}>Nav</Link>
+          <Link to={"/main"}>Nav</Link>
         </nav>
         <main>
           <div className="App__link">

@@ -14,8 +14,8 @@ export default class MainPage extends Component {
 static contextType = TCContext;
 
   render() {
-    const { books=[], chapters=[] } = this.context
-    console.log('hey now', books, chapters)
+    const { books, chapters, plantitles } = this.context
+    console.log('hey now', chapters)
     return (
       <div className="MainPage">
         {/* <nav className="Landing__nav" >Nav</nav> */}
@@ -23,13 +23,6 @@ static contextType = TCContext;
           <header className="Header">
           <h1>Theology for Children</h1>
           </header>
-
-          <section>
-            <p>
-              <b>Theology for Children</b> 
-              provides interactive Bible reading and reading plans for young readers using the English Standard Version
-            </p>
-          </section>
 
           {/* <section>
             {books.map(book => 
@@ -39,22 +32,24 @@ static contextType = TCContext;
                 id={book.id}
                 name={book.name}
                 chapters={chapters.filter(chapter =>
-                  chapter.book === book.name)}
+                  chapter.bookid === book.id)}
               />
               <p>"insert preview image"</p>
 
             </div>)}
-        </section> */}
-
+        </section>
+ */}
           {/* some times this returns wo id */}
           <section>
             {books.map(book => 
-            <Link to={`/${book.id}`} key={book.id}><h2>Read {book.name}</h2></Link>)}
+            <Link to={`/main/${book.id}`} key={book.id}><h2>Read {book.name}</h2></Link>)}
             <p>"insert preview image"</p>
         </section>
 
         <section>
-            <Link to={'/dailyreader'}><h2>Daily Read Plan</h2></Link>
+            <h2>Daily Reading Plan</h2>
+            {plantitles.map(pt =>
+            <Link to={`/dailyreader/${pt.id}`} key={pt.id}><h2>{pt.name}</h2></Link>)}
             <p>"insert preview image"</p>
         </section>
         </main>
