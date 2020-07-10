@@ -16,7 +16,8 @@ export default class App extends Component {
     chapters: [],
     verses: [],
     plantitles: [],
-    plans: []
+    plans: [],
+    contents: []
     }
 
   componentDidMount() {
@@ -27,19 +28,20 @@ export default class App extends Component {
       fetch(`${config.API_ENDPOINT}/api/verses`),
       fetch(`${config.API_ENDPOINT}/api/plantitles`),
       fetch(`${config.API_ENDPOINT}/api/plans`),
+      fetch(`${config.API_ENDPOINT}/api/contents`),
 
     ])
-      .then(([ booksRes, chaptersRes, versesRes, plantitlesRes, plansRes ]) => {
+      .then(([ booksRes, chaptersRes, versesRes, plantitlesRes, plansRes, contentsRes ]) => {
         if (!booksRes.ok) return booksRes.json().then(e => Promise.reject(e))
         if (!chaptersRes.ok) return chaptersRes.json().then(e => Promise.reject(e))
         if (!versesRes.ok) return versesRes.json().then(e => Promise.reject(e))
         if (!plantitlesRes.ok) return plantitlesRes.json().then(e => Promise.reject(e))
         if (!plansRes.ok) return plansRes.json().then(e => Promise.reject(e))
-        return Promise.all([booksRes.json(), chaptersRes.json(), versesRes.json(), plantitlesRes.json(), plansRes.json()])
+        if (!contentsRes.ok) return contentsRes.json().then(e => Promise.reject(e))
+        return Promise.all([booksRes.json(), chaptersRes.json(), versesRes.json(), plantitlesRes.json(), plansRes.json(), contentsRes.json()])
       })
-      .then(([books, chapters, verses, plantitles, plans]) => {
-        this.setState({ loading: false, books, chapters, verses, plantitles, plans })
-        console.log('fetch call', books, chapters, verses, plantitles, plans)
+      .then(([books, chapters, verses, plantitles, plans, contents]) => {
+        this.setState({ loading: false, books, chapters, verses, plantitles, plans, contents })
       })
       .catch(error => {
         console.error({ error })
@@ -65,10 +67,10 @@ export default class App extends Component {
       chapters: this.state.chapters,
       verses: this.state.verses,
       plantitles: this.state.plantitles,
-      plans: this.state.plans 
+      plans: this.state.plans,
+      contents: this.state.contents
       }
     const {loading}=this.state;
-    console.log('dont now', this.state.chapters, this.state.books)
     return (
       <div className="App">
         <nav className="App__nav" >

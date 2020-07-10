@@ -10,11 +10,6 @@ export default class DailyReadingPlan extends Component {
     const { plantitles, plans } = this.context;
     const plantitleId = this.props.match.params.planTitleId;
     const planTitle = findPlanTitle (plantitles, plantitleId) || {}
-    // const plantitle = plantitles.map(plantitle=>plantitle.name)
-    // const plan = plans.filter(p=>{
-    //   return p.title === plantitleId
-    // });
-    console.log('jump', planTitle)
     return (
       <div>
         <section>
