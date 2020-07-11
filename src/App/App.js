@@ -17,11 +17,11 @@ export default class App extends Component {
     verses: [],
     plantitles: [],
     plans: [],
-    contents: []
+    contents: [],
+    loading: true
     }
 
   componentDidMount() {
-    this.setState({loading: true}, () => {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/books`),
       fetch(`${config.API_ENDPOINT}/api/chapters`),
@@ -46,7 +46,6 @@ export default class App extends Component {
       .catch(error => {
         console.error({ error })
       })
-    })
   }
       
   renderMainRoutes() {
