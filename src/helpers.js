@@ -214,5 +214,3 @@ export const twentyone = function(array, n) {
     return [];
   return array.slice(0, n);
 };
-
-  
