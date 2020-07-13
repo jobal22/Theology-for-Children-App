@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
-import StringReplace from '../stringReplace/stringReplace'
+import StringReplace from '../DRPContent/DRPContent'
 import './DRPages.css'
 
 export default class DRPages extends Component {
@@ -37,21 +37,25 @@ export default class DRPages extends Component {
     const planVerse = get1DArray(planVerses)
     const verse = planVerse.map(v=>verses[v])
     return (
-      <div>
-        <section>
+      <div className = 'DRP'>
+        <header>
           {plan.map(r=>
             <h2 key={r.id}>{r.day}</h2>)}
+        </header>
+        <section className='sidebar'>
+          <h2>Comprehension Quiz</h2>
         </section>
-        <section>
+        <main>
           {verse.map(verse=>
           <StringReplace 
             key={verse.id}
             id={verse.id}
             name={verse.name}
             content={verse.content}
+            className='theText'
           />
           )}
-        </section>
+        </main>
 
       </div>
     )

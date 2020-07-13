@@ -12,9 +12,9 @@ export default class DailyReadingPlan extends Component {
     const planTitle = findPlanTitle (plantitles, plantitleId) || {}
     return (
       <div>
-        <section>
+        <header >
           <h1>Daily Reading Plan</h1>
-        </section>
+        </header>
         <section>
           <h3> {planTitle.name} </h3>
           {plans.map(p=>

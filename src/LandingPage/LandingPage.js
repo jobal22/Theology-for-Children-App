@@ -11,7 +11,7 @@ export class LandingPage extends Component {
             <h1>Welcome!</h1>
           </header>
           <section className="lpInfo">
-          <p>
+          <p className='lpP'>
               <b>Theology for Children</b> 
               {''} provides interactive Bible reading and reading plans for young readers using the English Standard Version
             </p>

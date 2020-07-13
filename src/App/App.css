@@ -1,22 +1,58 @@
 .App {
   font-family: "Open Sans",
   sans-serif; 
-  font-size: 20px;
+  /* font-size: 20px; */
   color: #444;
   text-align: center;
   line-height: 1.5;
 }
 
-.App__nav,
-.App__footer {
-  padding: 1% 0;
-  background-color: #aaa;
-}
-
 .App__nav {
   position: fixed;
+  padding-top: 1px;
+  padding-bottom: 70px;
+  background-color: #9AA4AB;
+  font-family: 'Gloria Hallelujah', cursive;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
+  /* min-width: 373px; */
+  border: 1px solid #E0CDCA;
+}
+
+.logo {
+  width: 100vh;
+  position: absolute; 
+  left: 50%;
+  transform: translate(-50%);
+  /* padding-top: 6px; */
+  display: inline-block; 
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  top: -7px;
+}
+
+
+.App__footer  {
+  position: fixed;
+  padding: 1% 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: bold;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 15px;
+  background-color: #9AA4AB;
+  z-index: 10;
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 35px;
+    top: -25px;
+  }
 }

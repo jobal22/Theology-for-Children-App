@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
 import {findChapter } from '../helpers';
-import StringReplace from '../stringReplace/stringReplace'
+import StringReplace from '../stringReplace/stringReplace';
+import './Chapters.css'
 
 export default class Chapters extends Component {
   
@@ -15,11 +16,12 @@ export default class Chapters extends Component {
     const verses = props.verse;
 
     return (
-      <div>
-        <header>
+      <div className='Chapters'>
+        <header className='chapterTitle'>
           <h3 key={chapter.id}>{chapter.name}</h3>
         </header>
-        <section>
+        <hr></hr>
+        <main>
           {verses.map(verse=>
           <StringReplace 
             key={verse.id}
@@ -28,7 +30,7 @@ export default class Chapters extends Component {
             content={verse.content}
           />
           )}
-        </section>
+        </main>
       </div>
     )
   }

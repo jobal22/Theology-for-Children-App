@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import OJO from '../Img/OJ-original.png';
-import OJS from '../Img/OJ-shephard.png';
-import OJD from '../Img/OJ-disciple.png';
+import './Images.css';
 
 export default class Images extends Component {
 
@@ -25,15 +23,19 @@ export default class Images extends Component {
   const pics = [
     require('../Img/OJ-original.png'),
     require('../Img/OJ-shephard.png'),
-    require('../Img/OJ-disciple.png')
+    require('../Img/OJ-disciple.png'),
+    require('../Img/EM-original.png'),
+    require('../Img/EM-shephard.png'),
+    require('../Img/NL-original.png'),
+    require('../Img/NL-shephard.png')
   ];
   console.log(shuffle(pics));
 
     
-    const pic = pics[Math.floor((Math.random() * 3))]
+    const pic = pics[Math.floor((Math.random() * 7))]
     return (
       <>
-        <img className='pic' id='pic' src={pic} alt='pic' width= '200px'/>
+        <img className='pic' position='center' id='pic' src={pic} alt='pic' width= '200px'/>
       </>
     )
   }

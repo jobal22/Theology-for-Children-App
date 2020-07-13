@@ -15,19 +15,18 @@ static contextType = TCContext;
     const { books, plantitles } = this.context
     return (
       <div className="MainPage">
-        <main>
-          <header className="Header">
+        {/* <header className="Header">
           <h1>Theology for Children</h1>
-          </header>
+        </header> */}
+        <main className='MPInfo'>
+          {books.map(book => 
+          <Link className='MPILink' to={`/main/${book.id}`} key={book.id}><h2>Read {book.name}</h2></Link>)}
+          <hr></hr>
           <section>
-            {books.map(book => 
-            <Link to={`/main/${book.id}`} key={book.id}><h2>Read {book.name}</h2></Link>)}
-        </section>
-        <section>
-            <h2>Daily Reading Plan</h2>
+            {/* <h2>Daily Reading Plan</h2> */}
             {plantitles.map(pt =>
-            <Link to={`/dailyreader/${pt.id}`} key={pt.id}><h2>{pt.name}</h2></Link>)}
-        </section>
+            <Link className='MPILink' to={`/dailyreader/${pt.id}`} key={pt.id}><h2>{pt.name}</h2></Link>)}
+          </section>
         </main>
       </div>
     )

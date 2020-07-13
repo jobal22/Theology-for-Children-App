@@ -1,0 +1,115 @@
+.DRP {
+  display: grid;
+  /* width: 100%;
+  height: 250px; */
+  grid-template-areas: "head head"
+                       "main sidebar";
+  grid-template-rows: 100px 1fr 30px;
+  grid-template-columns: 500px 1fr;
+
+}
+
+.DRP > header {
+  grid-area: head;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #E0CDCA;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+
+}
+
+.DRP > section {
+  position: fixed;
+  top: 95px;
+  right: 0;
+  grid-area: sidebar;
+  border: 1px solid #E0CDCA;
+  color: black;
+  grid-area: sidebar;
+  height: 100%;
+  overflow: auto;
+  margin-top: 50px;
+  padding-top: 15px;
+  width: 50%;
+  background-color: white;
+  font-size: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.DRP > main {
+  grid-area: main;
+  left: 0;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-top: 50px;
+  margin-left: 2%;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  text-align: left;
+  width: 30%;
+}
+/* .RRR {
+  text-align: left;
+
+} */
+
+@media screen and (min-width: 375px) {
+  .DRP > main {
+    margin-left: 2vh;
+    font-size: 20px;
+    width: 30%;
+  }
+  .DRP > section {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .DRP > main {
+    margin-left: 2vh;
+    font-size: 25px;
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .DRP > main {
+    margin-left: 3vh;
+    font-size: 30px;
+    width: 60%;
+  }
+  .DRP > section {
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .DRP > main {
+    grid-area: main;
+    margin-top: 50px;
+    margin-left: 5vh;
+    font-size: 40px;
+    width: 80%;
+  }
+  .DRP > section {
+    font-size: 22px;
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+  .DRP > main {
+    grid-area: main;
+    margin-top: 50px;
+    margin-left: 20%;
+    font-size: 40px;
+    width: 110%;
+  }
+}

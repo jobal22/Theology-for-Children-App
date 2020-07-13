@@ -17,12 +17,15 @@ render() {
     const {bookId} = this.props.match.params.bookId;
     const chapter = chapters.filter(chapter=>bookId === chapter.bookId)
     return (
-      <div>
-        <section>
+      <div className = 'Read'>
+        <header>
         {books.map(book=>
           <h2 key={book.id}>{book.name}</h2>)}
-        </section>
-        <section>
+        </header>
+        {/* <section className='sidebar'>
+          <h2>Comprehension Quiz</h2>
+        </section> */}
+        <main>
           {chapter.map(c=>
             <Chapters 
               key={c.id}
@@ -30,7 +33,7 @@ render() {
               name={c.name}
               verse = {verses.filter(verse=> verse.chapterid === c.id).map(v1=>v1)}
             />)}
-        </section>  
+        </main>  
       </div>
     )
   }

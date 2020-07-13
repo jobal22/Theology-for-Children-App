@@ -31,155 +31,397 @@ const disobedient = twenty(words)
 const quarrels = twentyone(words)
 
 export const servantContent =
-  <div>
-    <Images />
-    <h2>{servant.word}</h2>
-    <p>{servant.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{servant.word}</h2>
+      <hr></hr>
+      <p className='content'>{servant.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
 
 export const apostleContent =
-  <div>
-    <Images />
-    <h2>{apostle.word}</h2>
-    <p>{apostle.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{apostle.word}</h2>
+      <hr></hr>
+      <p className='content'>{apostle.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
 
 export const faithContent =
-  <div>
-    <Images />
-    <h2>{faith.word}</h2>
-    <p>{faith.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{faith.word}</h2>
+      <hr></hr>
+      <p className='content'>{faith.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
 
 export const truthContent =
-  <div>
-    <Images />
-    <h2>{truth.word}</h2>
-    <p>{truth.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{truth.word}</h2>
+      <hr></hr>
+      <p className='content1'>{truth.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const eternalLifeContent =
-  <div>
-    <Images />
-    <h2>{eternal.word}</h2>
-    <p>{eternal.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{eternal.word}</h2>
+      <hr></hr>
+      <p className='content'>{eternal.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const preachingContent =
-  <div>
-    <Images />
-    <h2>{preaching.word}</h2>
-    <p>{preaching.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{preaching.word}</h2>
+      <hr></hr>
+      <p className='content'>{preaching.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const saviorContent =
-  <div>
-    <Images />
-    <h2>{savior.word}</h2>
-    <p>{savior.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{savior.word}</h2>
+      <hr></hr>
+      <p className='content'>{savior.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const eldersContent =
-  <div>
-    <Images />
-    <h2>{elders.word}</h2>
-    <p>{elders.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{elders.word}</h2>
+      <hr></hr>
+      <p className='content'>{elders.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const reproachContent =
-  <div>
-    <Images />
-    <h2>{reproach.word}</h2>
-    <p>{reproach.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{reproach.word}</h2>
+      <hr></hr>
+      <p className='content'>{reproach.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const oneWifeContent =
-  <div>
-    <Images />
-    <h2>{one.word}</h2>
-    <p>{one.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{one.word}</h2>
+      <hr></hr>
+      <p className='content'>{one.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const arrogantContent =
-  <div>
-    <Images />
-    <h2>{arrogant.word}</h2>
-    <p>{arrogant.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{arrogant.word}</h2>
+      <hr></hr>
+      <p className='content'>{arrogant.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const quickTemperedContent =
-  <div>
-    <Images />
-    <h2>{quick.word}</h2>
-    <p>{quick.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{quick.word}</h2>
+      <hr></hr>
+      <p className='content'>{quick.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const selfControlledContent =
-  <div>
-    <Images />
-    <h2>{self.word}</h2>
-    <p>{self.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{self.word}</h2>
+      <hr></hr>
+      <p className='content'>{self.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const soundDoctrineContent =
-  <div>
-    <Images />
-    <h2>{sound.word}</h2>
-    <p>{sound.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{sound.word}</h2>
+      <hr></hr>
+      <p className='content'>{sound.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const insubordinateContent =
-  <div>
-    <Images />
-    <h2>{insubordinate.word}</h2>
-    <p>{insubordinate.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header1'>{insubordinate.word}</h2>
+      <hr></hr>
+      <p className='content'>{insubordinate.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const emptyTalkersContent =
-  <div>
-    <Images />
-    <h2>{empty.word}</h2>
-    <p>{empty.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{empty.word}</h2>
+      <hr></hr>
+      <p className='content'>{empty.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const deceiversContent =
-  <div>
-    <Images />
-    <h2>{deceivers.word}</h2>
-    <p>{deceivers.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{deceivers.word}</h2>
+      <hr></hr>
+      <p className='content'>{deceivers.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const shamefulGainContent =
-  <div>
-    <Images />
-    <h2>{shameful.word}</h2>
-    <p>{shameful.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{shameful.word}</h2>
+      <hr></hr>
+      <p className='content'>{shameful.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const gluttonsContent =
-  <div>
-    <Images />
-    <h2>{gluttons.word}</h2>
-    <p>{gluttons.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{gluttons.word}</h2>
+      <hr></hr>
+      <p className='content'>{gluttons.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const pureContent =
-  <div>
-    <Images />
-    <h2>{pure.word}</h2>
-    <p>{pure.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{pure.word}</h2>
+      <hr></hr>
+      <p className='content'>{pure.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const disobedientContent =
-  <div>
-    <Images />
-    <h2>{disobedient.word}</h2>
-    <p>{disobedient.content}</p>
-  </div>
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{disobedient.word}</h2>
+      <hr></hr>
+      <p className='content'>{disobedient.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)
+
 export const quarrelsContent =
-  <div>
-    <Images />
-    <h2>{quarrels.word}</h2>
-    <p>{quarrels.content}</p>
-  </div>
-
-
-
-// export default class JumpPop extends Component {
-
-//   render() {
-//     return (
-//       <div>
-//         <div >
-//           <h2>Information</h2>
-//           <img className='baby' id='baby' src={baby} alt='baby'/>
-//           <p>Here is some information about what you clicked on!</p>
-//         </div>
-//       </div>
-
-//     );
-//   }
-// }
+  close => (
+    <div className='modal'>
+      <Images />
+      <h2 className='header'>{quarrels.word}</h2>
+      <hr></hr>
+      <p className='content'>{quarrels.content}</p>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("modal closed ");
+          close();
+        }}
+      >
+        close modal
+      </button>
+    </div>)

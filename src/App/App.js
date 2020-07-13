@@ -7,7 +7,8 @@ import LandingPage from '../LandingPage/LandingPage.js';
 import DailyReadingPlan from '../DailyReadingPlan/DailyReadingPlan';
 import DRPages from '../DRPages/DRPages';
 import config from '../config';
-import LoadingSpinner from '../loadingSpinner/loadingSpinner.js'
+import LoadingSpinner from '../loadingSpinner/loadingSpinner.js';
+import logo from '../Img/TC-logo.png';
 import './App.css';
 
 export default class App extends Component {
@@ -74,7 +75,16 @@ export default class App extends Component {
     return (
       <div className="App">
         <nav className="App__nav" >
-          <Link to={"/main"}>Nav</Link>
+          <Link className="navLink" to={"/main"}>
+            {/* <img className='logo img' src={logo} alt='Logo'/> */}
+            <h1 className='logo' >Theology for Children</h1>
+          </Link>
+          {/* <div className='navMenu'>
+            <ul>
+              <li className='menu'>Read</li>
+              <li className='menu'>Daily Plan</li>
+            </ul>
+          </div> */}
         </nav>
         <main>
           <div className="App__link">
@@ -84,7 +94,7 @@ export default class App extends Component {
           </div>
           {loading ? <LoadingSpinner/> : <></>}
         </main>
-        <footer className="App__footer"></footer>
+        <footer className="App__footer">Read • Learn • Grow</footer>
       </div>
     )
   }

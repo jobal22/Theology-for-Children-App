@@ -1,0 +1,55 @@
+/* .chapterTitle {
+  position: fixed;
+
+} */
+.chapterTitle {
+  font-size: 20px;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+hr {
+  width: 60%;
+  /* margin-top: 40px; */
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #9AA4AB;
+}
+
+
+.Chapters > main {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  text-align: left;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  hr {
+    width: 50%;
+  }
+  .Chapters > main {
+    font-size: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .chapterTitle {
+    font-size: 30px;
+  }
+  
+}
+
+@media screen and (min-width: 1439px) {
+  hr {
+    width: 30%;
+  }
+  .chapterTitle {
+    font-size: 40px;
+  }
+  .Chapters > main {
+    font-size: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
