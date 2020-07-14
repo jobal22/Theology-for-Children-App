@@ -1,0 +1,7 @@
+/* .Quiz {
+  display: grid;
+  grid-template-areas: "head head"
+                       "main sidebar";
+  grid-template-rows: 100px 1fr 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+} */

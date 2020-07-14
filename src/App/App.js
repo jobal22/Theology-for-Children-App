@@ -6,6 +6,7 @@ import Read from '../Read/Read';
 import LandingPage from '../LandingPage/LandingPage.js';
 import DailyReadingPlan from '../DailyReadingPlan/DailyReadingPlan';
 import DRPages from '../DRPages/DRPages';
+import Quiz from '../Quiz/Quiz';
 import config from '../config';
 import LoadingSpinner from '../loadingSpinner/loadingSpinner.js';
 import logo from '../Img/TC-logo.png';
@@ -18,7 +19,9 @@ export default class App extends Component {
     verses: [],
     plantitles: [],
     plans: [],
-    contents: []
+    contents: [],
+    quiztitles: [],
+    quiz: []
     }
 
   componentDidMount() {
@@ -30,23 +33,35 @@ export default class App extends Component {
       fetch(`${config.API_ENDPOINT}/api/plantitles`),
       fetch(`${config.API_ENDPOINT}/api/plans`),
       fetch(`${config.API_ENDPOINT}/api/contents`),
+      fetch(`${config.API_ENDPOINT}/api/quiztitles`),
+      fetch(`${config.API_ENDPOINT}/api/quizes`),
+
 
     ])
-      .then(([ booksRes, chaptersRes, versesRes, plantitlesRes, plansRes, contentsRes ]) => {
+      .then(([ booksRes, chaptersRes, versesRes, plantitlesRes, plansRes, contentsRes, quiztitlesRes, quizesRes ]) => {
         if (!booksRes.ok) return booksRes.json().then(e => Promise.reject(e))
         if (!chaptersRes.ok) return chaptersRes.json().then(e => Promise.reject(e))
         if (!versesRes.ok) return versesRes.json().then(e => Promise.reject(e))
         if (!plantitlesRes.ok) return plantitlesRes.json().then(e => Promise.reject(e))
         if (!plansRes.ok) return plansRes.json().then(e => Promise.reject(e))
         if (!contentsRes.ok) return contentsRes.json().then(e => Promise.reject(e))
-        return Promise.all([booksRes.json(), chaptersRes.json(), versesRes.json(), plantitlesRes.json(), plansRes.json(), contentsRes.json()])
+        if (!quiztitlesRes.ok) return quiztitlesRes.json().then(e => Promise.reject(e))
+        if (!quizesRes.ok) return quizesRes.json().then(e => Promise.reject(e))
+        return Promise.all([booksRes.json(), chaptersRes.json(), versesRes.json(), plantitlesRes.json(), plansRes.json(), contentsRes.json(), quiztitlesRes.json(), quizesRes.json()])
       })
-      .then(([books, chapters, verses, plantitles, plans, contents]) => {
-        this.setState({ loading: false, books, chapters, verses, plantitles, plans, contents })
+      .then(([books, chapters, verses, plantitles, plans, contents, quiztitles, quizes]) => {
+        this.setState({ loading: false, books, chapters, verses, plantitles, plans, contents, quiztitles, quizes })
       })
       .catch(error => {
         console.error({ error })
       })
+    })
+  }
+
+  updateQuiz = updateQuiz => {
+    this.setState({
+      quizes: this.state.quizes.map(qu =>
+        (qu.id !== updateQuiz.qu) ? qu : updateQuiz)
     })
   }
       
@@ -58,6 +73,7 @@ export default class App extends Component {
         <Route exact path= "/main/:bookId" component={Read}/>
         <Route exact path= "/dailyreader/:planTitleId" component={DailyReadingPlan}/>
         <Route exact path= "/readingplan/:planId" component={DRPages}/>
+        <Route exact path= "/quiz/:quizId" component={Quiz} />
       </>
     )
   }
@@ -69,7 +85,10 @@ export default class App extends Component {
       verses: this.state.verses,
       plantitles: this.state.plantitles,
       plans: this.state.plans,
-      contents: this.state.contents
+      contents: this.state.contents,
+      quiztitles: this.state.quiztitles,
+      quizes: this.state.quizes,
+      updateQuiz: this.updateQuiz
       }
     const {loading}=this.state;
     return (

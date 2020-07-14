@@ -16,6 +16,9 @@ plantitles.find(plantitle => plantitle.id === plantitleId);
 export const findPlan = (plans, planId) =>
 plans.find(plan => plan.id === planId);
 
+export const findQuiz = (quizes, quiztitleId) =>
+quizes.find(quiz => quiz.qtconnect === quiztitleId);
+
 export const zero = function(array, n) {
   if (array == null) 
     return void 0;
