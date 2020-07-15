@@ -196,13 +196,13 @@ export default class Quiz extends Component {
           <h3 >{questions}</h3>
           <span> {`Quetions ${currentQuestion + 1} out of ${quiz.length - 0}`}</span>
             {answers.map(answer => 
-              <button key={answer.id}
+              <p key={answer.id}
                 className={` answers ${userAnswer === answer ? "selected" : null}`}
                 onClick={() => this.checkAnswer(answer)}
                 onChange={this.handleChangeUserAnswer}
               >
                 {answer}
-              </button>
+              </p>
             )}{currentQuestion < quiz.length -1 &&
             <button 
               disabled={this.state.disabled}
@@ -219,14 +219,14 @@ export default class Quiz extends Component {
             }
 </form>
         </main>
-        <section>
+        {/* <section>
           {quiz.map(q=>
           <div>
             <p>{q.qname}{q.question}</p>
             <p>Answer Choices: {q.answers}</p>
             <p>Correct Answer: {q.correctanswer}</p>
             <p>Your Answer: {q.useranswer}</p></div>)}
-        </section>
+        </section> */}
       </div>
     )
   }
