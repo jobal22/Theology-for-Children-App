@@ -46,12 +46,15 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 768px) {
   .lp-header {
-    padding-top: 90px;
+    padding-top: 110px;
   }
   .lpInfo {
-    padding-top: 0px;
+    padding-top: 10px;
   }
-  
+  .Landing__link{
+    padding-top: 70px;
+
+  }
 }

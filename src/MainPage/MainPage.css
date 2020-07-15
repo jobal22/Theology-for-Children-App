@@ -1,7 +1,6 @@
 .MPInfo {
-  grid-area: head;
   position: fixed;
-  top: 70px;
+  top: 100px;
   left: 0;
   right: 0;
   z-index: 10;
@@ -9,16 +8,34 @@
   /* border: 2px solid black; */
 }
 
-hr {
-  width: 60%;
-  margin-top: 30px;
+.MPMain > section > p {
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid #0e2c3b;
+  border: 3px solid #E0CDCA;
+  border-radius: 7px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 250px;
+  /* height: 300px; */
+}
+.MPILink {
+  text-decoration: none;
+  color: #785353;
+  font-size: 20px;
+  font-weight: bolder;
+  /* text-shadow: 1px 1px 1px rgb(5, 5, 5); */
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
 }
 
-.MPILink {
-  font-family: 'Nunito Sans', sans-serif;
-  /* text-decoration: none; */
-  color: black;
+@media screen and (min-width: 1024px) {
+  .MPMain > section > p {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 400px;
+    height: 100px;
+
+  }
 }

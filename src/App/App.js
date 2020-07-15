@@ -22,7 +22,7 @@ export default class App extends Component {
     plans: [],
     contents: [],
     quiztitles: [],
-    quiz: [],
+    quizes: [],
     loading: true
     }
 
@@ -60,8 +60,8 @@ export default class App extends Component {
 
   updateQuiz = updateQuiz => {
     this.setState({
-      quizes: this.state.quizes.map(qu =>
-        (qu.id !== updateQuiz.id) ? qu : updateQuiz)
+      quizes: this.state.quizes.map(quiz =>
+        (quiz.id !== updateQuiz.id) ? quiz : updateQuiz)
     })
   }
       

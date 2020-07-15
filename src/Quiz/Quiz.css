@@ -1,29 +1,123 @@
-/* .Quiz {
-  display: grid;
-  grid-template-areas: "head head"
-                       "main sidebar";
-  grid-template-rows: 100px 1fr 30px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-} */
-/* .Player{
-  padding-top: 200px;
-  margin-top:40px;
-} */
+.Quiz > main {
+  /* margin-top: 60%; */
+  border: 1px solid #9AA4AB;
+  border-radius: 7px;
+  /* margin-top: 70px; */
+  margin-left: 20px;
+  margin-right: 20px;
+  /* height: 300px; */
+  /* text-align: center; */
+}
+
+.questionheader {
+  margin-top: 20px;
+}
+
+hr {
+  width: 60%;
+  /* margin-top: 40px; */
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #9AA4AB;
+  margin-bottom: 40px;
+}
+
+.questiontitle {
+  margin-top: 20px;
+  /* font-size: 20px;
+  text-align: left; */
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+
 
 .answers {
-  border: 2px solid black;
+  border: 2px solid #E0CDCA;
+  border-radius: 7px;
   padding: 8px;
-  margin-left: 90px;
-  margin-right: 90px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
+  font-size: 12px;
 }
 
 .selected {
-  background: linear-gradient(to right, blue, gray) !important;
+  background: #9AA4AB;
+  color: white;
+  font-weight: bold;
 }
 
-.answers {
-  padding: 8px;
-  border: 2px solid black;
+.moveBtn {
+  margin-bottom: 20px;
+  /* outline:none; */
+  /* text-decoration: underline; */
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  text-shadow: 1px 1px 1px rgb(5, 5, 5);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
   cursor: pointer;
+  color: #9AA4AB;
+}
+
+.moveBtn:hover {
+  color: #785353;
+}
+
+@media screen and (min-width: 768px) {
+  /* .Quiz {
+    margin-top: 15vh;
+  } */
+  .Quiz > main {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .questiontitle {
+    /* font-size: 40px; */
+    padding-left: 10px;
+    padding-right: 10px;
+  }  
+
+  .answers {
+    margin-top: 20px;
+    font-size: 18px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }  
+
+  .moveBtn {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  /* .Quiz {
+    margin-top: 15vh;
+  } */
+  .Quiz > main {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .questiontitle {
+    font-size: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }  
+  .answers {
+    margin-top: 30px;
+    font-size: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+  
+  }  
+  .moveBtn {
+    font-size: 30px;
+  }
 }

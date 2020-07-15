@@ -1,3 +1,51 @@
-li {
-  list-style-type:none;
+.DailyReadingPlan {
+  margin-bottom: 70px;
+}
+
+.DRT{
+  margin-top: 100px;
+  font-size: 30px;
+}
+
+hr {
+  width: 60%;
+  /* margin-top: 40px; */
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #9AA4AB;
+  margin-bottom: 40px;
+}
+
+
+.DRPlan{
+  font-size: 25px;
+}
+
+.DailyReadingPlan > section > p {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #E0CDCA;
+  border-radius: 7px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  width: 200px;
+}
+
+.DRLink {
+  text-decoration: none;
+  color: #785353;
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px rgb(5, 5, 5);
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+}
+
+@media screen and (min-width: 1024px) {
+  .DailyReadingPlan > section > p {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
