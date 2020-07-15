@@ -27,7 +27,6 @@ export default class stringReplace extends Component {
 
     return (
       <div>
-        {/* <p>{replacedQuarrels}</p> */}
         {contents.map(c=>
         reactStringReplace(verse, c.word, (match, i) => (
         <Popup trigger={<button >{match}</button>} position='right center'>
@@ -37,7 +36,6 @@ export default class stringReplace extends Component {
           </div>
         </Popup>
           ))
-
           )}
       </div>
     )

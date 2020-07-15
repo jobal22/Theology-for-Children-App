@@ -7,10 +7,8 @@ import './DailyReadingPlan.css';
 export default class DailyReadingPlan extends Component {
   static contextType = TCContext;
   render() {
-    const { plantitles, plans, quizes } = this.context;
-    const plantitleId = this.props.match.params;
+    const { plantitles, plans } = this.context;
     const plantitle = plantitles.map(p => p.name)
-    const planTitle = findPlanTitle (plantitles, plantitleId) || {}
     console.log('now what', plantitle)
     return (
       <div className='DailyReadingPlan'>

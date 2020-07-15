@@ -1,7 +1,6 @@
 .App {
   font-family: "Open Sans",
   sans-serif; 
-  /* font-size: 20px; */
   color: #444;
   text-align: center;
   line-height: 1.5;
@@ -13,12 +12,10 @@
   padding-bottom: 70px;
   background-color: #9AA4AB;
   font-family: 'Gloria Hallelujah', cursive;
-  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  /* min-width: 373px; */
   border: 1px solid #E0CDCA;
 }
 
@@ -27,7 +24,6 @@
   position: absolute; 
   left: 50%;
   transform: translate(-50%);
-  /* padding-top: 6px; */
   display: inline-block; 
   text-align: center;
   color: white;

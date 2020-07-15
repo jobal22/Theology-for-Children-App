@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
-import PropTypes from 'prop-types';
 import './Quiz.css';
 
 export default class Quiz extends Component {
-
-  // static propTypes = {
-  //   match: PropTypes.shape({
-  //     params: PropTypes.object,
-  //   }),
-  //   history: PropTypes.shape({
-  //     push: PropTypes.func,
-  //   }).isRequired,
-  // };
 
   static contextType = TCContext;
 
@@ -53,14 +43,12 @@ export default class Quiz extends Component {
       this.setState({
         currentQuestion: this.state.currentQuestion + 1
       })
-      //increment the score is answer is correct
       if(useranswer === correctanswer) {
         this.setState({
           score: score + 1
         })
       }
     }
-    //updates the component
     componentDidUpdate(prevProps, prevState) {
       const {currentQuestion} = this.state;
       const {quizes} = this.context;

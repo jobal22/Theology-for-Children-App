@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Images from '../Images/Images';
 import COMPLEX from '../complex'
 import './PopUp.css';

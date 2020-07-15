@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
 import Chapters from '../Chapters/Chapters';
-import {findBook} from '../helpers';
 import './Read.css';
 
 export default class Read extends Component {
@@ -22,9 +21,6 @@ render() {
         {books.map(book=>
           <h2 key={book.id}>{book.name}</h2>)}
         </header>
-        {/* <section className='sidebar'>
-          <h2>Comprehension Quiz</h2>
-        </section> */}
         <main>
           {chapter.map(c=>
             <Chapters 

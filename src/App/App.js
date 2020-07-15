@@ -6,11 +6,8 @@ import Read from '../Read/Read';
 import LandingPage from '../LandingPage/LandingPage.js';
 import DailyReadingPlan from '../DailyReadingPlan/DailyReadingPlan';
 import DRPages from '../DRPages/DRPages';
-import Quiz from '../Quiz/Quiz';
-import QuizId from '../QuizId/QuizId';
 import config from '../config';
 import LoadingSpinner from '../loadingSpinner/loadingSpinner.js';
-import logo from '../Img/TC-logo.png';
 import './App.css';
 
 export default class App extends Component {
@@ -73,9 +70,6 @@ export default class App extends Component {
         <Route exact path= "/main/:bookId" component={Read}/>
         <Route exact path= "/dailyreader/:planTitleId" component={DailyReadingPlan}/>
         <Route exact path= "/readingplan/:planId" component={DRPages}/>
-        {/* <Switch>
-        <Route exact path= "/readingplan/:planId" component={Quiz}/>
-        <Route exact path= "/quiz/:quizId" component={QuizId} /></Switch> */}
       </Switch>
     )
   }
@@ -97,15 +91,8 @@ export default class App extends Component {
       <div className="App">
         <nav className="App__nav" >
           <Link className="navLink" to={"/main"}>
-            {/* <img className='logo img' src={logo} alt='Logo'/> */}
             <h1 className='logo' >Theology for Children</h1>
           </Link>
-          {/* <div className='navMenu'>
-            <ul>
-              <li className='menu'>Read</li>
-              <li className='menu'>Daily Plan</li>
-            </ul>
-          </div> */}
         </nav>
         <main>
           <div className="App__link">

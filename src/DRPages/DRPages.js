@@ -22,7 +22,7 @@ export default class DRPages extends Component {
   static contextType = TCContext;
 
   render() {
-    const {plans, verses, quiztitles, quizes} = this.context;
+    const {plans, verses, quiztitles} = this.context;
     const planId = this.props.match.params;
     const plan = plans.filter(m=> planId.planId == m.id)
     const pqt = plan.map(p => p.quiztitles)
@@ -39,10 +39,6 @@ export default class DRPages extends Component {
     const planVerse = get1DArray(planVerses)
     const verse = planVerse.map(v=>verses[v])
     const quiztitle = quiztitles.filter(q => q.id == pqt)
-    // const quiz = quizes.map(quiz => quiz.name)
-    // const quiz = quizes.filter(quiz => quiz.qtconnect)
-
-    console.log('Where the Quiz?', quizes)
     return (
       <div className = 'DRP'>
         <header>
@@ -70,7 +66,6 @@ export default class DRPages extends Component {
           />
           )}
         </main>
-
       </div>
     )
   }

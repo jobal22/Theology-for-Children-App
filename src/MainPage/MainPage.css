@@ -5,7 +5,6 @@
   right: 0;
   z-index: 10;
   background-color: white;
-  /* border: 2px solid black; */
 }
 
 .MPMain > section > p {
@@ -17,14 +16,12 @@
   padding-top: 60px;
   padding-bottom: 60px;
   width: 250px;
-  /* height: 300px; */
 }
 .MPILink {
   text-decoration: none;
   color: #785353;
   font-size: 20px;
   font-weight: bolder;
-  /* text-shadow: 1px 1px 1px rgb(5, 5, 5); */
   letter-spacing: 2px;
   font-family: 'Playfair Display', serif;
 }
@@ -36,6 +33,5 @@
     margin-right: 20px;
     width: 400px;
     height: 100px;
-
   }
 }
