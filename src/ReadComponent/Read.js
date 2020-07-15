@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
-import Chapters from '../Chapters/Chapters';
+import Chapters from '../ChaptersComponent/Chapters';
 import './Read.css';
 
 export default class Read extends Component {

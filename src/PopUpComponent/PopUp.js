@@ -1,5 +1,5 @@
 import React from "react";
-import Images from '../Images/Images';
+import Images from '../ImagesComponent/Images';
 import COMPLEX from '../complex'
 import './PopUp.css';
 import {zero, first, second, third, four, fifth, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone } from '../helpers'

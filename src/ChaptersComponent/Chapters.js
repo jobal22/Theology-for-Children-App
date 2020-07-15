@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
 import {findChapter } from '../helpers';
-import StringReplace from '../stringReplace/stringReplace';
+import StringReplace from '../stringReplaceComponent/stringReplace';
 import './Chapters.css'
 
 export default class Chapters extends Component {

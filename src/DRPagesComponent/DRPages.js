@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
-import StringReplace from '../DRPContent/DRPContent';
-import Quiz from '../Quiz/Quiz';
+import StringReplace from '../DRPContentComponent/DRPContent';
+import Quiz from '../QuizComponent/Quiz';
 import './DRPages.css';
 
 export default class DRPages extends Component {

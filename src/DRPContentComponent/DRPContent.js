@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TCContext from '../Context/TCContext';
 import reactStringReplace from 'react-string-replace';
-import {servantContent, apostleContent, faithContent, truthContent, eternalLifeContent, preachingContent, saviorContent, eldersContent, reproachContent, oneWifeContent, arrogantContent, quickTemperedContent, selfControlledContent, soundDoctrineContent, insubordinateContent, emptyTalkersContent, deceiversContent, shamefulGainContent, gluttonsContent, pureContent, disobedientContent, quarrelsContent } from '../PopUp/PopUp';
+import {servantContent, apostleContent, faithContent, truthContent, eternalLifeContent, preachingContent, saviorContent, eldersContent, reproachContent, oneWifeContent, arrogantContent, quickTemperedContent, selfControlledContent, soundDoctrineContent, insubordinateContent, emptyTalkersContent, deceiversContent, shamefulGainContent, gluttonsContent, pureContent, disobedientContent, quarrelsContent } from '../PopUpComponent/PopUp';
 import Popup from "reactjs-popup";
 import './DRPContent.css'
 
