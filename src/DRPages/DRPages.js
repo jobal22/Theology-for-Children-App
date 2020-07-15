@@ -40,6 +40,8 @@ export default class DRPages extends Component {
     const verse = planVerse.map(v=>verses[v])
     const quiztitle = quiztitles.filter(q => q.id == pqt)
     // const quiz = quizes.map(quiz => quiz.name)
+    // const quiz = quizes.filter(quiz => quiz.qtconnect)
+
     console.log('Where the Quiz?', quizes)
     return (
       <div className = 'DRP'>
@@ -53,6 +55,7 @@ export default class DRPages extends Component {
             key = {quiztitle.id}
             id = {quiztitle.id}
             name = {quiztitle.name}
+            planId = {this.props.match.params}
             />
             )}
         </section>

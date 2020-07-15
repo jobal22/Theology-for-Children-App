@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import TCContext from '../Context/TCContext'
 import MainPage from '../MainPage/MainPage';
 import Read from '../Read/Read';
@@ -7,6 +7,7 @@ import LandingPage from '../LandingPage/LandingPage.js';
 import DailyReadingPlan from '../DailyReadingPlan/DailyReadingPlan';
 import DRPages from '../DRPages/DRPages';
 import Quiz from '../Quiz/Quiz';
+import QuizId from '../QuizId/QuizId';
 import config from '../config';
 import LoadingSpinner from '../loadingSpinner/loadingSpinner.js';
 import logo from '../Img/TC-logo.png';
@@ -21,11 +22,11 @@ export default class App extends Component {
     plans: [],
     contents: [],
     quiztitles: [],
-    quiz: []
+    quiz: [],
+    loading: true
     }
 
   componentDidMount() {
-    this.setState({loading: true}, () => {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/api/books`),
       fetch(`${config.API_ENDPOINT}/api/chapters`),
@@ -55,26 +56,27 @@ export default class App extends Component {
       .catch(error => {
         console.error({ error })
       })
-    })
   }
 
   updateQuiz = updateQuiz => {
     this.setState({
       quizes: this.state.quizes.map(qu =>
-        (qu.id !== updateQuiz.qu) ? qu : updateQuiz)
+        (qu.id !== updateQuiz.id) ? qu : updateQuiz)
     })
   }
       
   renderMainRoutes() {
     return (
-      <>
+      <Switch>
         <Route exact path= "/" component={LandingPage}/>       
         <Route exact path= "/main" component={MainPage}/>
         <Route exact path= "/main/:bookId" component={Read}/>
         <Route exact path= "/dailyreader/:planTitleId" component={DailyReadingPlan}/>
         <Route exact path= "/readingplan/:planId" component={DRPages}/>
-        <Route exact path= "/quiz/:quizId" component={Quiz} />
-      </>
+        {/* <Switch>
+        <Route exact path= "/readingplan/:planId" component={Quiz}/>
+        <Route exact path= "/quiz/:quizId" component={QuizId} /></Switch> */}
+      </Switch>
     )
   }
 

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component , useState} from 'react';
+import { Link, Switch } from 'react-router-dom';
 import TCContext from '../Context/TCContext';
 import PropTypes from 'prop-types';
 import {findQuiz} from '../helpers';
@@ -28,23 +28,100 @@ export default class Quiz extends Component {
   state = {
     error: null,
     id: '',
-    answer: ''
+    // answer: '',
+    questionId: null,
+    userAnswer: null,
+    currentQuestion: 0,
+    answers: [],
+    quizEnd: false,
+    score: 0,
+    disabled: true
   };
 
-  handleChangeAnswer = e => {
-    this.setState({ answer: e.target.value })
+  loadQuiz =  () => {
+    const {currentQuestion} = this.state
+    const {quizes} = this.context
+    const quiztitle = this.props;
+    const quiz = quizes.filter(quiz => quiz.qtconnect === quiztitle.id);
+    this.setState (() => {
+      return {
+        questions: quiz[currentQuestion].question,
+        answers: quiz[currentQuestion].answers,
+        correctanswer: quiz[currentQuestion].correctanswer
+      };
+    });
   };
 
-  handleSubmit = (e, qu) => {
+  componentDidMount() {
+    this.loadQuiz();
+  };
+
+    nextQuestionHandler = () => {
+      const {userAnswer, correctanswer, score} = this.state
+      this.setState({
+        currentQuestion: this.state.currentQuestion + 1
+      })
+      // console.log(this.state.currentQuestion)
+      //increment the score is answer is correct
+      if(userAnswer === correctanswer) {
+        this.setState({
+          score: score + 1
+        })
+      }
+    }
+    //updates the component
+    componentDidUpdate(prevProps, prevState) {
+      const {currentQuestion} = this.state;
+      const {quizes} = this.context;
+      const quiztitle = this.props;
+      const quiz = quizes.filter(quiz => quiz.qtconnect === quiztitle.id);
+      if(this.state.currentQuestion !== prevState.currentQuestion) {
+        this.setState(() => {
+          return {
+            disabled: true,
+            questions: quiz[currentQuestion].question,
+            answers: quiz[currentQuestion].answers,
+            correctanswer: quiz[currentQuestion].correctanswer
+          };
+        })
+      }
+    }
+
+    checkAnswer = answer => {
+      this.setState({
+        userAnswer: answer,
+        disabled: false
+      })
+    }
+    finishHandler = () => {
+      const {quizes} = this.context;
+      const quiztitle = this.props;
+      const quiz = quizes.filter(quiz => quiz.qtconnect === quiztitle.id);
+      if(this.state.currentQuestion === quiz.length - 1) {
+        this.setState({
+          quizEnd: true
+        })
+      }
+    }
+
+
+
+
+  handleChangeUserAnswer = e => {
+    console.log(e.target.id, 'useranswer')
+    this.setState({ useranswer: e.target.value })
+  };
+
+  handleSubmit = (e, quiz) => {
     e.preventDefault()
     const {quizes=[]} = this.context;
     const quiztitle = this.props;
-    const quiz = quizes.filter(quiz => quiz.qtconnect === quiztitle.id)
-    const quizId = quiz.map(q=> q.id)
-    const { quizID } = quizId
-    const { answer } = this.state
-    const newQuiz = {answer}
-    fetch(config.API_ENDPOINT + `/api/quiz/${quizID}`, {
+    const qu = quizes.filter(quiz => quiz.qtconnect === quiztitle.id)
+    const quizId = qu.map(q=> q.id)
+    const { useranswer } = this.state
+    const newQuiz = {useranswer}
+    console.log('does this work', qu)
+    fetch(config.API_ENDPOINT + `/api/quiz/${quizId}`, {
       method: 'PATCH',
       body: JSON.stringify(newQuiz),
       headers: {
@@ -58,9 +135,9 @@ export default class Quiz extends Component {
         console.log('JOBAL', this.props)
         this.context.updateQuiz(newQuiz)
         Swal.fire('Congrats!', 'Quiz updated', 'success')
-        .then(() => {
-          this.props.history.push('/main/admin')
-        })
+        // .then(() => {
+        //   this.props.history.push('/main/admin')
+        // })
       })
       .catch(error => {
         Swal.fire('Oops!', 'Quiz failed', 'error')
@@ -71,13 +148,42 @@ export default class Quiz extends Component {
 
   render() {
     const {quizes=[]} = this.context;
+    const {questionId} = this.state
     const quiztitle = this.props;
     // const quiztitleId = quiztitle.id;
     // const quiz = findQuiz(quizes, quiztitleId) || {content: ''}
     const quiz = quizes.filter(quiz => quiz.qtconnect === quiztitle.id)
-    const ans = quiz.map(p => p.options)
+    let ans;
+    if (questionId){
+      ans = quizes.find(quiz => quiz.id === questionId).answers
+    }
     const quizId = quiz.map(q=> q.id)
-    console.log('NOW LOOK', ans)
+    const { quizID } = quizId
+        console.log('hihihi', ans)
+
+    // console.log('NOW LOOK', quizId)
+    const {questions, answers, currentQuestion, userAnswer, quizEnd} = this.state
+    // console.log('hihihi', this.state)
+    
+      if(quizEnd) {
+        return (
+          <div>
+            <h2>Game Over</h2>
+            <h3>Final score is {this.state.score} points</h3>
+            <p> The correct Answer's for the Questions were: </p>
+            <ul>
+              {quiz.map((item, index) => (
+                <li className='correctanswer'
+                  key={index}
+                >
+                  {item.qname}{' '}{item.correctanswer}
+                </li>
+              ))}
+            </ul>
+            <p>Here is your answers: {userAnswer}</p>
+          </div>
+        )
+      }
     return (
       <div className='Quiz'>
         <header>
@@ -86,14 +192,41 @@ export default class Quiz extends Component {
           <h2>{quiztitle.name}</h2>
         </header>
         <main>
-          {quiz.map(q =>
-          <ul>
-            <li>
-              <Link to={`/quiz/${q.id}`}>{q.qname}{' '}{q.content}</Link>
-            </li>
-          </ul>
-          )}
+          <form onSubmit={(e) => this.handleSubmit(e,quiz)}>
+          <h3 >{questions}</h3>
+          <span> {`Quetions ${currentQuestion + 1} out of ${quiz.length - 0}`}</span>
+            {answers.map(answer => 
+              <button key={answer.id}
+                className={` answers ${userAnswer === answer ? "selected" : null}`}
+                onClick={() => this.checkAnswer(answer)}
+                onChange={this.handleChangeUserAnswer}
+              >
+                {answer}
+              </button>
+            )}{currentQuestion < quiz.length -1 &&
+            <button 
+              disabled={this.state.disabled}
+              className='moveBtn'
+              onClick={this.nextQuestionHandler}
+            >Next</button>
+            }
+            {currentQuestion === quiz.length - 1 && 
+              <button
+                disabled={this.state.disabled}
+                className='moveBtn'
+                onClick={this.finishHandler}
+              >Finish</button>
+            }
+</form>
         </main>
+        <section>
+          {quiz.map(q=>
+          <div>
+            <p>{q.qname}{q.question}</p>
+            <p>Answer Choices: {q.answers}</p>
+            <p>Correct Answer: {q.correctanswer}</p>
+            <p>Your Answer: {q.useranswer}</p></div>)}
+        </section>
       </div>
     )
   }
