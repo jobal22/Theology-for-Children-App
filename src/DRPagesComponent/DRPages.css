@@ -1,69 +1,143 @@
-.DRP {
-  display: grid;
-  grid-template-areas: "head head"
-                       "main sidebar";
-  grid-template-rows: 100px 1fr 30px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-}
-
-.DRP > header {
-  grid-area: head;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  background-color: white;
-  border: 1px solid #E0CDCA;
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-  word-spacing: 3px;
-
-}
-
-.DRP > section {
-  position: fixed;
-  top: 95px;
-  right: 0;
-  grid-area: sidebar;
-  border: 1px solid #E0CDCA;
+.planLink {
+  text-decoration: none;
   color: black;
-  grid-area: sidebar;
-  height: 100%;
-  overflow: auto;
-  margin-top: 50px;
-  padding-top: 15px;
-  width: 50%;
-  font-size: 10px;
-  font-family: 'Playfair Display', serif;
 }
 
-.DRP > main {
-  grid-area: main;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 50px;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  text-align: left;
+@media screen and (max-width: 424px) {
+  .DRP {
+    display: grid;
+    grid-template-areas: "head head"
+                        "main main"
+                        "sidebar sidebar";
+    grid-template-rows: 100px 1fr 30px;
+    /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+
+  }
+
+  .DRP > header {
+    grid-area: head;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #E0CDCA;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+
+  }
+
+  .DRP > section {
+    grid-area: sidebar;
+    /* position: fixed; */
+    /* top: 95px; */
+    /* right: 0; */
+    /* border: 1px solid #E0CDCA;
+    color: black;
+    height: 100%;
+    overflow: auto;
+    margin-top: 50px;
+    padding-top: 15px;
+    width: 50%; */
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 350px;
+    border: 1px solid #E0CDCA;
+    margin-bottom: -300px;
+    padding-bottom: 20px;
+  }
+
+  .DRP > main {
+    grid-area: main;
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    text-align: left;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 350px;
+    border: 1px solid #E0CDCA;
+
+  }
 }
 
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
   .DRP > main {
     font-size: 20px;
   }
   .DRP > section {
     font-size: 14px;
   }
-}
+} */
 
 @media screen and (min-width: 425px) {
-  .DRP > main {
+  /* .DRP > main {
     font-size: 25px;
     margin-left: 15px;
     margin-right: 15px;
+  } */
+  .DRP {
+    display: grid;
+    grid-template-areas: "head head"
+                         "main sidebar";
+    grid-template-rows: 100px 1fr 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .DRP > header {
+    grid-area: head;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #E0CDCA;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+  
+  }
+  
+  .DRP > section {
+    position: fixed;
+    top: 95px;
+    right: 0;
+    grid-area: sidebar;
+    border: 1px solid #E0CDCA;
+    color: black;
+    grid-area: sidebar;
+    height: 100%;
+    overflow: auto;
+    margin-top: 50px;
+    padding-top: 15px;
+    width: 50%;
+    font-size: 15px;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .DRP > main {
+    grid-area: main;
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    margin-top: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: left;
   }
 }
 

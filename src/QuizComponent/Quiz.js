@@ -91,40 +91,6 @@ export default class Quiz extends Component {
       }
     }
 
-  // handleChangeUserAnswer = e => {
-  //   console.log(e.target.value, 'useranswer')
-  //   this.setState({ useranswer: e.target.value })
-  // };
-
-  // handleSubmit = (e, quiz) => {
-  //   e.preventDefault()
-  //   const {questionId, questionnumber, questions, answers, currentQuestion, useranswer, quizEnd} = this.state;
-  //   const newAnswer = { ...useranswer}
-  //   fetch(config.API_ENDPOINT + `/api/quiz/${questionId}`, {
-  //     method: 'PATCH',
-  //     body: JSON.stringify(newAnswer),
-  //     headers: {
-  //       'content-type': 'application/json',
-  //     },
-  //   })
-  //     .then(res => {
-  //       return res.ok
-  //     })
-  //     .then(() => {
-  //       console.log('JOBAL', newAnswer)
-  //       this.context.updateQuiz(newAnswer)
-  //       Swal.fire('Congrats!', 'Quiz updated', 'success')
-  //       .then(() => {
-  //         this.props.history.push('/main/admin')
-  //       })
-  //     })
-  //     .catch(error => {
-  //       Swal.fire('Oops!', 'Quiz failed', 'error')
-  //       console.error(error)
-  //       this.setState({ error })
-  //     })
-  // }
-
   render() {
     const {quizes=[]} = this.context;
     const quiztitle = this.props;
@@ -142,9 +108,7 @@ export default class Quiz extends Component {
               <h3 className='questiontitle'>Final score is {this.state.score} points</h3>
               <span> The correct answer's were: </span>
                 {quiz.map((item, index) => (
-                  <p className='answers'
-                    key={index}
-                  >
+                  <p className='answersEnd' key={index}>
                     {item.qname}{' '}{item.correctanswer}
                   </p>
                 ))}

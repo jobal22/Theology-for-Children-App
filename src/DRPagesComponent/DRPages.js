@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import TCContext from '../Context/TCContext';
 import StringReplace from '../DRPContentComponent/DRPContent';
 import Quiz from '../QuizComponent/Quiz';
@@ -39,11 +40,12 @@ export default class DRPages extends Component {
     const planVerse = get1DArray(planVerses)
     const verse = planVerse.map(v=>verses[v])
     const quiztitle = quiztitles.filter(q => q.id == pqt)
+    console.log('JOBASL', this.props.history)
     return (
       <div className = 'DRP'>
         <header>
           {plan.map(r=>
-            <h2 key={r.id}>{r.day}</h2>)}
+            <Link to={'/dailyreader/1'} className='planLink'><h2 key={r.id}>{r.day}</h2></Link>)}
         </header>
         <section className='sidebar'>
           {quiztitle.map(quiztitle =>

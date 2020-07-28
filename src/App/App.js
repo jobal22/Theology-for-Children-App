@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import TCContext from '../Context/TCContext'
+import TCContext from '../Context/TCContext';
 import MainPage from '../MainPageComponent/MainPage';
 import Read from '../ReadComponent/Read';
 import LandingPage from '../LandingPageComponent/LandingPage.js';
@@ -65,7 +65,7 @@ export default class App extends Component {
   renderMainRoutes() {
     return (
       <Switch>
-        <Route exact path= "/" component={LandingPage}/>       
+        <Route exact path= "/" component={LandingPage}/>  
         <Route exact path= "/main" component={MainPage}/>
         <Route exact path= "/main/:bookId" component={Read}/>
         <Route exact path= "/dailyreader/:planTitleId" component={DailyReadingPlan}/>
