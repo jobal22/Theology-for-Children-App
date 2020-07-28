@@ -7,7 +7,7 @@ import LandingPage from '../LandingPageComponent/LandingPage.js';
 import DailyReadingPlan from '../DailyReadingPlanComponent/DailyReadingPlan';
 import DRPages from '../DRPagesComponent/DRPages';
 import config from '../config';
-import LoadingSpinner from '../loadingSpinner/loadingSpinner.js';
+import LoadingSpinner from '../loadingSpinnerComponent/loadingSpinner.js';
 import './App.css';
 
 export default class App extends Component {
