@@ -40,7 +40,6 @@ export default class DRPages extends Component {
     const planVerse = get1DArray(planVerses)
     const verse = planVerse.map(v=>verses[v])
     const quiztitle = quiztitles.filter(q => q.id == pqt)
-    console.log('JOBASL', this.props.history)
     return (
       <div className = 'DRP'>
         <header>

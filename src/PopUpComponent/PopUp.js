@@ -40,7 +40,6 @@ export const servantContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -58,7 +57,6 @@ export const apostleContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -76,7 +74,6 @@ export const faithContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -94,7 +91,6 @@ export const truthContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -112,7 +108,6 @@ export const eternalLifeContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -130,7 +125,6 @@ export const preachingContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -148,7 +142,6 @@ export const saviorContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -166,7 +159,6 @@ export const eldersContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -184,7 +176,6 @@ export const reproachContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -202,7 +193,6 @@ export const oneWifeContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -220,7 +210,6 @@ export const arrogantContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -238,7 +227,6 @@ export const quickTemperedContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -256,7 +244,6 @@ export const selfControlledContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -274,7 +261,6 @@ export const soundDoctrineContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -292,7 +278,6 @@ export const insubordinateContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -310,7 +295,6 @@ export const emptyTalkersContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -328,7 +312,6 @@ export const deceiversContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -346,7 +329,6 @@ export const shamefulGainContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -364,7 +346,6 @@ export const gluttonsContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -382,7 +363,6 @@ export const pureContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -400,7 +380,6 @@ export const disobedientContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >
@@ -418,7 +397,6 @@ export const quarrelsContent =
       <button
         className="button"
         onClick={() => {
-          console.log("modal closed ");
           close();
         }}
       >

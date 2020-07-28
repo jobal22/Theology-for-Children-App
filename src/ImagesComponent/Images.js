@@ -29,8 +29,6 @@ export default class Images extends Component {
     require('../Img/NL-original.png'),
     require('../Img/NL-shephard.png')
   ];
-  console.log(shuffle(pics));
-
     
     const pic = pics[Math.floor((Math.random() * 7))]
     return (

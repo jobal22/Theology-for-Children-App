@@ -17,7 +17,6 @@ export default class Books extends Component {
     const bookId = props.id
     const { books=[] } = this.context
     const book = findBook (books, bookId) || {}
-    console.log('this is first props', props)
     return (
       <div>
         <section>

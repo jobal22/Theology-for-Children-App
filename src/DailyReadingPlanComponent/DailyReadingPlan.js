@@ -9,7 +9,6 @@ export default class DailyReadingPlan extends Component {
   render() {
     const { plantitles, plans } = this.context;
     const plantitle = plantitles.map(p => p.name)
-    console.log('now what', plantitle)
     return (
       <div className='DailyReadingPlan'>
         <header>
