@@ -44,7 +44,7 @@ export const servantContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -62,7 +62,7 @@ export const apostleContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -80,7 +80,7 @@ export const faithContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -98,7 +98,7 @@ export const truthContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -116,7 +116,7 @@ export const eternalLifeContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -134,7 +134,7 @@ export const preachingContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -152,7 +152,7 @@ export const saviorContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -170,7 +170,7 @@ export const eldersContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -188,7 +188,7 @@ export const reproachContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -206,7 +206,7 @@ export const oneWifeContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -224,7 +224,7 @@ export const arrogantContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -242,7 +242,7 @@ export const quickTemperedContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -260,7 +260,7 @@ export const selfControlledContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -278,7 +278,7 @@ export const soundDoctrineContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -296,7 +296,7 @@ export const insubordinateContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -314,7 +314,7 @@ export const emptyTalkersContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -332,7 +332,7 @@ export const deceiversContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -350,7 +350,7 @@ export const shamefulGainContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -368,7 +368,7 @@ export const gluttonsContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -386,7 +386,7 @@ export const pureContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -404,7 +404,7 @@ export const disobedientContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
 
@@ -422,6 +422,6 @@ export const quarrelsContent =
           close();
         }}
       >
-        close modal
+        close
       </button>
     </div>)
