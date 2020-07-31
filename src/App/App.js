@@ -33,8 +33,6 @@ export default class App extends Component {
       fetch(`${config.API_ENDPOINT}/api/contents`),
       fetch(`${config.API_ENDPOINT}/api/quiztitles`),
       fetch(`${config.API_ENDPOINT}/api/quizes`),
-
-
     ])
       .then(([ booksRes, chaptersRes, versesRes, plantitlesRes, plansRes, contentsRes, quiztitlesRes, quizesRes ]) => {
         if (!booksRes.ok) return booksRes.json().then(e => Promise.reject(e))
